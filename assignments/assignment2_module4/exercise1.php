@@ -3,20 +3,19 @@
     function loop(){
         $x = 1;
         $i = 1;
-        
+    
         while($x < 5){
-            echo $x;
+            $output = "<li>$x</li>";
+            $i = 1;
             while($i < 5){  
-            $output = " <ul>  
+            $output .= "<ul>
             <li> $i </li>
             </ul>";
             $i++;
-            echo $output;
         }
-        $i = 1;
+        echo $output;
         $x++;
         }
-    
     }
     
 ?>
