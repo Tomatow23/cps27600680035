@@ -3,8 +3,12 @@ $output = "";
 if(count($_POST) > 0){
     require_once 'add_name.php';
     $addName = new Name();
-    $output .= $addName->addName();
+    $output = $addName -> addName($_POST["enterName"]) . $_POST["nameArea"];
+    if(isset($_POST["clearNames"])){
+      $output = "";
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -18,17 +22,17 @@ if(count($_POST) > 0){
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<form action="add_name.php" method="post">
+<form method="post">
 <h1>Add Names</h1>
-<button class="btn btn-primary" type="button" onclick="$output = $addName->addName()">Add Name</button>
-<button class="btn btn-primary" type="button">Clear Names</button>
+<button class="btn btn-primary" type="submit">Add Name</button>
+<button class="btn btn-primary" type="submit" name="clearNames">Clear Names</button>
 <div class="mb-3">
   <label for="enterName" class="form-label">Enter Name</label>
-  <input type="name" class="form-control" id="enterName" placeholder="Enter Name Here">
+  <input type="name" class="form-control" id="enterName" name="enterName" placeholder="Enter Name Here">
 </div>
 <div class="mb-3">
   <label for="nameArea" class="form-label">Names</label>
-  <textarea class="form-control" id="nameArea" rows="10" disabled><?php echo $output;  ?></textarea>
+  <textarea class="form-control" id="nameArea" rows="10" name="nameArea"><?php echo $output;  ?></textarea>
 </div>
 </form>
 </body>
