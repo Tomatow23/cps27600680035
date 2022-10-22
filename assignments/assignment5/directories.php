@@ -19,7 +19,7 @@ Class Directories{
             touch($handle);
             $work = fopen($handle, "w");
             fwrite($work, $file_content);
-            return "File and Directory was created <br> <a href=$handle> Path  </a> <br>";
+            return "<br> File and Directory was created <br> <a href=$handle> Path  </a> <br>";
         }else{
             return "File already exist <br>";
         }
