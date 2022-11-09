@@ -1,4 +1,5 @@
 <?php
+$output = "";
 if(count($_POST) > 0){
     require_once "directories.php";
     $directory = new Directories();
