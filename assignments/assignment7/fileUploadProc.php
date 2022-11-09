@@ -8,14 +8,11 @@ function proccesFile()
 {
     require_once "php/Pdo_methods.php";
 
-    $fileSize = $_FILES["file"]["size"];
-    $fileType = $_FILES["file"]["type"];
-
-    if ($fileSize >= 100000)
+    if ($_FILES["file"]["size"]>= 100000)
     {
         return "File too big.";
     }
-    if ($fileType != "application/pdf")
+    if ($_FILES["file"]["type"] != "application/pdf")
     {
         return "File must be a pdf file.";
     }
