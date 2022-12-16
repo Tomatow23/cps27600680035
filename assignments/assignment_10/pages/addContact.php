@@ -69,7 +69,7 @@ $elementsArr = [
     "state"=>[
     "type"=>"select",
     "options"=>["mi"=>"Michigan","oh"=>"Ohio","pa"=>"Pennslyvania","tx"=>"Texas"],
-    "selected"=>"oh",
+    "selected"=>"mi",
     "regex"=>"state"
     ],
 
@@ -85,7 +85,7 @@ $elementsArr = [
     "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Email cannot be blank and must be a valid email</span>",
     "errorOutput"=>"",
     "type"=>"text",
-    "value"=>"abc@xyz.com",
+    "value"=>"example@email.com",
     "regex"=>"email"
     ],
    
